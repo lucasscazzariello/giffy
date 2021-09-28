@@ -1,5 +1,5 @@
 import './ListOfGifs.css'
-import Gif from '../Gif/Gif'
+import Gif from '../Gif'
 
 const ListOfGifs = ({ gifs }) => {
 
