@@ -1,18 +1,19 @@
-import ListOfGifs from "../../components/ListOfGifs"
-import Spinner from "../../components/Spinner"
-import { useGifs } from "../../hooks/useGifs"
+import React from 'react'
+import Spinner from '../../components/Spinner'
+import ListOfGifs from '../../components/ListOfGifs'
+import {useGifs} from '../../hooks/useGifs'
 
-const SearchResults = ({ params }) => {
-    const { keyword } = params
-    const { loading, gifs } = useGifs({ keyword })
+export default function SearchResults ({ params }) {
+  const { keyword } = params
+  const { loading, gifs } = useGifs({ keyword })
 
-    return <>
-        {loading
-            ? <Spinner />
-            : <ListOfGifs gifs={gifs} />
-        }
-    </>
-
+  return <>
+    {loading
+      ? <Spinner />
+      : <>
+        <h3 className="App-title">{keyword}</h3>
+        <ListOfGifs gifs={gifs} />
+      </>
+    }
+  </>
 }
-
-export default SearchResults

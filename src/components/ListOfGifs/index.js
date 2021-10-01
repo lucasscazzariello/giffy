@@ -1,14 +1,18 @@
-import './ListOfGifs.css'
+import React from 'react'
 import Gif from '../Gif'
+import './styles.css'
 
-const ListOfGifs = ({ gifs }) => {
-
-    return <div className="ListOfGifs">
-        {
-            gifs.map(({ title, url, id }) => <Gif title={title} url={url} id={id} key={id} />)
-        }
-    </div>
-
+export default function ListOfGifs ({gifs}) {
+  return <div className='ListOfGifs'>
+    {
+      gifs.map(({id, title, url}) =>
+        <Gif
+          id={id}
+          key={id}
+          title={title}
+          url={url}
+        />
+      )
+    }
+  </div>
 }
-
-export default ListOfGifs
