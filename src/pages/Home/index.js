@@ -30,9 +30,9 @@ export default function Home() {
           <h3 className="App-title">Última búsqueda</h3>
           <ListOfGifs gifs={gifs} />
         </div>
-        <div className="App-category">
+        {/* <div className="App-category">
           <TrendingSearches />
-        </div>
+        </div> */}
       </div>
     </>
   )
