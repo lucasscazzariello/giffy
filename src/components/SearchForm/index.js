@@ -10,8 +10,9 @@ export default function SearchForm({
   initialRating = RATINGS[0]
 }) {
   const [_, pushLocation] = useLocation()
+  console.log(_)
 
-  const {keyword, rating, times, changeKeyword, changeRating} = useForm({ initialKeyword, initialRating })
+  const { keyword, rating, times, changeKeyword, changeRating } = useForm({ initialKeyword, initialRating })
 
   const onSubmit = ({ keyword }) => {
     if (keyword !== '') {
